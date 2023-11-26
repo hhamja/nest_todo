@@ -11,12 +11,14 @@ export class TodoService {
     private todoRepository: Repository<Todo>,
   ) {}
 
-  async createTodo(title: string, content: string) {
-    const todo: Todo = new Todo();
-    todo.title = title;
-    todo.content = content;
+  createTodo(title: string, content: string) {
+    const todo = this.todoRepository.create({
+      title: title,
+      content: content,
+    });
 
-    return this.todoRepository.save(todo);
+    const newTodo = this.todoRepository.save(todo);
+    return newTodo;
   }
 
   // 모든 Todo 리스트 가져오기
