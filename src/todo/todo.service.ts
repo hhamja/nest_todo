@@ -44,7 +44,9 @@ export class TodoService {
     todo.title = title;
     todo.content = content;
 
-    return todo;
+    const newTodo = await this.todoRepository.save(todo);
+
+    return newTodo;
   }
 
   // 특정 Todo 삭제
