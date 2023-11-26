@@ -6,6 +6,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 @Injectable()
 export class TodoService {
   constructor(
+    // Todo Repository DI
     @InjectRepository(Todo)
     private todoRepository: Repository<Todo>,
   ) {}
