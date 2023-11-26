@@ -41,8 +41,12 @@ export class TodoService {
       },
     });
 
-    todo.title = title;
-    todo.content = content;
+    if (title) {
+      todo.title = title;
+    }
+    if (content) {
+      todo.content = content;
+    }
 
     const newTodo = await this.todoRepository.save(todo);
 
