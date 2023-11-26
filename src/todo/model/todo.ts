@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Todo {
@@ -11,9 +17,9 @@ export class Todo {
   @Column()
   content: string;
   // 업데이트 일자
-  @Column()
+  @UpdateDateColumn()
   updatedAt: string;
   // 생성일자
-  @Column()
+  @CreateDateColumn()
   createdAt: string;
 }
