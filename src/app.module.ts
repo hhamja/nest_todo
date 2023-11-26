@@ -17,6 +17,7 @@ import { Todo } from './todo/model/todo';
       password: 'postgres',
       database: 'postgres',
       entities: [Todo],
+      synchronize: true,
     }),
   ],
   controllers: [AppController],
